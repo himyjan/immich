@@ -31,6 +31,20 @@ const envData: EnvData = {
     server: 'server-public-key',
   },
 
+  network: {
+    trustedProxies: [],
+  },
+
+  otel: {
+    metrics: {
+      hostMetrics: false,
+      apiMetrics: {
+        enable: false,
+        ignoreRoutes: [],
+      },
+    },
+  },
+
   redis: {
     host: 'redis',
     port: 6379,
@@ -54,6 +68,16 @@ const envData: EnvData = {
 
   storage: {
     ignoreMountCheckErrors: false,
+  },
+
+  telemetry: {
+    apiPort: 8081,
+    microservicesPort: 8082,
+    enabled: false,
+    hostMetrics: false,
+    apiMetrics: false,
+    jobMetrics: false,
+    repoMetrics: false,
   },
 
   workers: [ImmichWorker.API, ImmichWorker.MICROSERVICES],
